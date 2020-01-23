@@ -6,6 +6,7 @@ let computerSelection;
 let playerSelection;
 
 //generates computer's selection
+/**************Will only pick once for all rounds */
 function computerPlay(){
     let play = Math.random();
 
@@ -67,6 +68,7 @@ playerSelection = prompt("Choose: rock, paper, or scissors?");
 //console.log(playRound(playerSelection, computerSelection));
 //Would like this function to play 5 rounds while keeping score between player and computer to identify winner. Stuck on how to keep score. 
 function game(){
+    /************will run 4 rounds */
     for (rounds=1; rounds<5; rounds++){
     playRound(playerSelection,computerSelection);
 
