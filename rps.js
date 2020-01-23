@@ -25,33 +25,41 @@ computerSelection = computerPlay();
 function playRound(playerSelection, computerSelection){
 
 playerSelection = prompt("Choose: rock, paper, or scissors?");   
+    // Changing if's and else if's to return result
     if (playerSelection === "rock" && computerSelection === "scissors"){
         result = "win";
-        return alert ("You win! Rock beats scissors!");
+        alert ("You win! Rock beats scissors!");
+        return result;
     }
     else if (playerSelection === "rock" && computerSelection === "paper"){
         result = "lose";
-        return alert("You lose! Paper covers rock!");
+        alert("You lose! Paper covers rock!");
+        return result;
     }
     else if (playerSelection === "scissors" && computerSelection === "rock"){
         result = "lose";
-        return alert("You lose! Rock beats scissors!");
+        alert("You lose! Rock beats scissors!");
+        return result;
     }
     else if (playerSelection === "scissors" && computerSelection === "paper"){
         result = "win";
-        return alert("You win! Scissors beats paper!");
+        alert("You win! Scissors beats paper!");
+        return result;
     }
     else if (playerSelection === "paper" && computerSelection === "scissors"){
         result = "lose";
-        return alert("You lose! Scissors beats paper!");
+        alert("You lose! Scissors beats paper!");
+        return result;
     }
     else if (playerSelection === "paper" && computerSelection === "rock"){
         result = "win";
-        return alert("You win! Paper covers rock!");
+        alert("You win! Paper covers rock!");
+        return result;
     }
     else if (playerSelection === computerSelection){
         result = "tie";
-        return alert("It's a tie!");
+        alert("It's a tie!");
+        return result;
     }
     else {return alert("Try again! Enter rock, paper, or scissors.");
     }
@@ -76,9 +84,11 @@ function game(){
 } 
 
     if (playerScore > computerScore){
-        return "Score is: " + playerScore + " to " + computerScore + " You win! Congratulations!";}
+        return "Score is: " + playerScore + " to " + computerScore + " You win! Congratulations!";
+    }
     else{
-        return "Score is: " + playerScore + " to " + computerScore + " You lose! Try again!";}
+        return "Score is: " + playerScore + " to " + computerScore + " You lose! Try again!";
+    }
 }
 
 console.log(game());
