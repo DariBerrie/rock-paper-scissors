@@ -6,7 +6,7 @@ let computerSelection;
 let playerSelection;
 
 //generates computer's selection
-
+/*****You should look at this function again... */
 function computerPlay(){
     let play = Math.random();
 
@@ -26,7 +26,7 @@ computerSelection = computerPlay();
 function playRound(playerSelection, computerSelection){
 
 playerSelection = prompt("Choose: rock, paper, or scissors?");   
-    // Changing if's and else if's to return result
+    /* ****************Changing if's and else if's to return result*/
     if (playerSelection === "rock" && computerSelection === "scissors"){
         result = "win";
         alert ("You win! Rock beats scissors!");
