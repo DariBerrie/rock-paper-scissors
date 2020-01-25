@@ -20,19 +20,19 @@
 
 //generates computer's selection
    function computerPlay(){
-       let play = Math.random();
+       let play = Math.floor(Math.random()*3);
 
-       if (play <= 0.333){
+       if (play === 0){
            return "rock";
        }
-       else if (play <=.666){
+       else if (play === 1){
            return "paper";
        }
        else {
            return "scissors";
        }
    }
-    computerSelection = computerPlay();
+    //computerSelection = computerPlay();
 
 //Plays one round of game, returns an alert saying if player won or lost, tied, or did not enter an accepted value.
     function playRound(playerSelection, computerSelection){
@@ -40,45 +40,53 @@
     playerSelection = prompt("Choose: rock, paper, or scissors?");   
       if (playerSelection === "rock" && computerSelection === "scissors"){
             result = "win";
-            return alert ("You win! Rock beats scissors!");}
+            alert ("You win! Rock beats scissors!");
+            return result;}
       else if (playerSelection === "rock" && computerSelection === "paper"){
             result = "lose";
-            return alert("You lose! Paper covers rock!");}
+            alert("You lose! Paper covers rock!");
+            return result;}
       else if (playerSelection === "scissors" && computerSelection === "rock"){
             result = "lose";
-            return alert("You lose! Rock beats scissors!");}
+            alert("You lose! Rock beats scissors!");
+            return result;}
       else if (playerSelection === "scissors" && computerSelection === "paper"){
             result = "win";
-            return alert("You win! Scissors beats paper!");}
+            alert("You win! Scissors beats paper!");
+            return result;}
       else if (playerSelection === "paper" && computerSelection === "scissors"){
             result = "lose";
-            return alert("You lose! Scissors beats paper!");}
+            alert("You lose! Scissors beats paper!");
+            return result;}
       else if (playerSelection === "paper" && computerSelection === "rock"){
             result = "win";
-            return alert("You win! Paper covers rock!");}
+            alert("You win! Paper covers rock!");
+            return result;}
       else if (playerSelection === computerSelection){
             result = "tie";
-            return alert("It's a tie!");}
+            alert("It's a tie!");
+            return result;}
       else {return alert("Try again! Enter rock, paper, or scissors.");}
         }
-//console.log(playRound(playerSelection, computerSelection));
+ 
 //Would like this function to play 5 rounds while keeping score between player and computer to identify winner. Stuck on how to keep score. 
       function game(){
-          for (rounds=1; rounds<5; rounds++){
-          playRound(playerSelection,computerSelection);
+          for (rounds=0; rounds<5; rounds++){
+                  computerSelection = computerPlay();
+                  playRound(playerSelection,computerSelection);
 
-          let scoreKeeper = result.playRound(playerSelection, computerSelection);
-          
-          if (scoreKeeper = "win"){
-            playerScore++;}
-          else if (scoreKeeper = "lose"){
-            computerScore++;}
-        } 
-
+                  let scoreKeeper = result;
+                  if (scoreKeeper === "win"){
+                        playerScore++;}
+                  else if (scoreKeeper === "lose"){
+                        computerScore++;} 
+            } 
+      
           if (playerScore > computerScore){
-              return "Score is: " + playerScore + " to " + computerScore + " You win! Congratulations!";}
-          else{
-              return "Score is: " + playerScore + " to " + computerScore + " You lose! Try again!";}
+              return alert ("Score is: " + playerScore + " to " + computerScore + " You win! Congratulations!");}
+          else if (playerScore < computerScore){
+              return alert("Score is: " + playerScore + " to " + computerScore + " You lose! Try again!");}
+          else{ return alert("It's a tie! Everyone's a winner!");}
         }
 
 console.log(game());
